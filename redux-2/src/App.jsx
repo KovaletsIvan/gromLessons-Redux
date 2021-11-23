@@ -5,7 +5,7 @@ import { DataContext } from "./data-context";
 class App extends React.Component {
 
   state = {
-    userDate: {
+    userData: {
       name: 'Nicola Tesla',
       avatar_url: 'https://avatars3.githubusercontent.com/u10001',
     }
@@ -14,7 +14,7 @@ class App extends React.Component {
   render() {
     return (
       <div className='page'>
-        <DataContext.Provider value={this.state.userDate} >
+        <DataContext.Provider value={this.state.userData} >
           <Header />
         </DataContext.Provider>
       </div>
