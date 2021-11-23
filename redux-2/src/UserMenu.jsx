@@ -18,4 +18,5 @@ class UserMenu extends React.Component {
 
 }
 UserMenu.contextType = DataContext
+
 export default UserMenu
