@@ -10,6 +10,5 @@ store.dispatch(addUser(3, 'John'))
 store.dispatch(deleteUser(3)),
 
 
-store.subscribe(() => {console.log(store.getState())})
+  store.subscribe(() => (store.getState()))
 
-console.log(store.getState())
