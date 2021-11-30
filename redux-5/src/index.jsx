@@ -1,16 +1,17 @@
 import store from './store'
 import { addUser, deleteUser } from './users.actions'
-const divElem = document.querySelector('.page')
 
-store.dispatch(addUser(1, 'Ivan'))
-store.dispatch(addUser(2, 'Igor'))
-store.dispatch(addUser(3, 'John'))
-store.dispatch(deleteUser(3))
-store.dispatch(addUser(3, 'John'))
 
+const actionCteators=(func)=>{
+  store.dispatch(func)
+}
+actionCteators(addUser(3, 'John'))
+actionCteators(addUser(1, 'Ivan'))
+actionCteators(deleteUser(3))
+actionCteators(addUser(2, 'Igor'))
 
 
 store.subscribe(() => {
-  divElem.textContent = store.getState()
+  console.log(store.getState())
 })
 
