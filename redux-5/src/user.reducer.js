@@ -8,7 +8,8 @@ const userReducer = (state = initialState, action) => {
       return { ...state, usersList: state.usersList.concat(action.payload) };
     case DELETEUSER:
       return {
-       userList: state.usersList.filter((elem) => elem.id !== action.payload),
+        ...state,
+        usersList: state.usersList.filter((elem) => elem.id !== action.payload),
       };
     default:
       return state;
