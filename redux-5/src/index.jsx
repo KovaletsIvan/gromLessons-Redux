@@ -11,7 +11,6 @@ actionCteators(deleteUser(3))
 actionCteators(addUser(2, 'Igor'))
 
 
-store.subscribe(() => {
+
   console.log(store.getState())
-})
 
