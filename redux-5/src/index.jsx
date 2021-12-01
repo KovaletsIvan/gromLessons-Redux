@@ -10,5 +10,5 @@ actionCteators(addUser({id:1, name:'Tom'}))
 actionCteators(deleteUser(3))
 actionCteators(addUser({id:2, name:'Bob'}))
 
-console.log(store.getState())
+
 
