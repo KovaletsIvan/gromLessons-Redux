@@ -1,4 +1,4 @@
-import { increment,decrement } from './counter.actions'
+import { increment,decrement, reset } from './counter.actions'
 import store from './store'
 import { addUser, deleteUser, updateUser } from './users.actions'
 
@@ -13,6 +13,7 @@ actionCteators(addUser({ id: 2, name: 'Bob' }))
 actionCteators(updateUser(2, { name: 'Sem', age: 35 }))
 actionCteators(increment())
 actionCteators(increment())
+actionCteators(reset())
 
 
 console.log(store.getState())
