@@ -1,4 +1,4 @@
-import store, { increment,decrement } from './counter'
+import  { increment, decrement, store } from './counter'
 
 
 const actionCteators = (func) => {
