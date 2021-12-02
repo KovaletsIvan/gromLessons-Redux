@@ -7,7 +7,7 @@ export const usersReducer = (state = initialStateUsers, action) => {
     case ADD_USER:
       return (state = action.payload.userData);
     case REMOVE_USER:
-      return (state = null);
+      return (state = initialStateUsers);
     default:
       return state;
   }

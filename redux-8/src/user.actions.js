@@ -1,7 +1,7 @@
 export const ADD_USER = 'USERS/ADD_USER';
 export const REMOVE_USER = 'USERS/REMOVE_USER';
 
-export const addUser = (userData) => {
+export const setUser = (userData) => {
   return {
     type: ADD_USER,
     payload: {
