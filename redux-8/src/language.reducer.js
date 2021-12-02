@@ -1,6 +1,6 @@
-const initialStateLenguage = 'en';
+const initialStateLanguage = 'en';
 
-export const lenguageReducer = (state = initialStateLenguage, action) => {
+export const languageReducer = (state = initialStateLanguage, action) => {
   switch (action.type.length) {
     case 2:
       return (state = action.type);
