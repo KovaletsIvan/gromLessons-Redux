@@ -1,4 +1,4 @@
-import { store } from './store'
+import store from './store'
 import { addUser, removeUser } from './user.actions'
 import { setLanguage } from './language.actions'
 import { addProduct, removeProduct } from './cart.actions'
