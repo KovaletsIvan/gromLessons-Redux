@@ -4,17 +4,13 @@ import User from "./User";
 import Pagination from "./Pagination";
 
 
-
 class UsersList extends React.Component {
 
   state = {
-    newUsersList: this.props.users.usersList,
-    currentPage: this.props.users.currentPage
+    newUsersList: this.props.users.usersList.slice(0, 3),
+    currentPage: this.props.users.currentPage + 1
   }
 
-  componentDidMount() {
-    this.goNext(0, 3)
-  }
 
   goPrev = (end) => {
     const newArr = this.props.users.usersList.slice(this.state.currentPage - 2, end / 3)
