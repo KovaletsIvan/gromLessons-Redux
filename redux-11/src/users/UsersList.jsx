@@ -5,12 +5,12 @@ import Pagination from "./Pagination";
 
 
 class UsersList extends React.Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.itemsPerPage = 3
     this.state = {
-      newUsersList: [],
-      currentPage: 1
+      newUsersList: this.props.users.usersList,
+      currentPage: this.props.users.currentPage + 1
     }
   }
 
@@ -18,7 +18,6 @@ class UsersList extends React.Component {
     this.setState({
       newUsersList: this.props.users.usersList.slice(this.props.currentPage, this.itemsPerPage)
     })
-    console.log(this.state.currentPage)
   }
 
   goPrev = () => {
@@ -38,8 +37,8 @@ class UsersList extends React.Component {
       currentPage: this.state.currentPage + 1
     })
   }
-  render() {
 
+  render() {
     return (
       <div>
         <Pagination
