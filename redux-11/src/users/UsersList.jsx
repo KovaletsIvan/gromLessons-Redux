@@ -8,21 +8,22 @@ class UsersList extends React.Component {
 
   state = {
     newUsersList: [],
-    currentPage: this.props.users.currentPage
+    currentPage: 1
   }
   componentDidMount() {
-    this.goNext(0, 3)
+    this.setState({
+      newUsersList: this.props.users.usersList.slice(0, 3)
+    })
   }
 
   goPrev = () => {
     const start = this.props.users.usersList.indexOf(this.state.newUsersList[0])-3;
-    const end = this.props.users.usersList.indexOf(this.state.newUsersList[2]);
     const newArr = this.props.users.usersList.slice(start, start+3)
     this.setState({
       newUsersList: newArr,
       currentPage: this.state.currentPage - 1
     })
-    console.log(start, end)
+    console.log(start)
 
   }
   goNext = (start, end) => {
