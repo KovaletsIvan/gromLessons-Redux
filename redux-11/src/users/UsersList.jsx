@@ -7,18 +7,22 @@ import Pagination from "./Pagination";
 class UsersList extends React.Component {
 
   state = {
-    newUsersList: this.props.users.usersList.slice(0, 3),
-    currentPage: this.props.users.currentPage + 1
+    newUsersList: [],
+    currentPage: this.props.users.currentPage
+  }
+  componentDidMount() {
+    this.goNext(0, 3)
   }
 
-
-  goPrev = (end) => {
-    const newArr = this.props.users.usersList.slice(this.state.currentPage - 2, end / 3)
+  goPrev = () => {
+    const start = this.props.users.usersList.indexOf(this.state.newUsersList[0])-3;
+    const end = this.props.users.usersList.indexOf(this.state.newUsersList[2]);
+    const newArr = this.props.users.usersList.slice(start, start+3)
     this.setState({
       newUsersList: newArr,
       currentPage: this.state.currentPage - 1
     })
-
+    console.log(start, end)
 
   }
   goNext = (start, end) => {
