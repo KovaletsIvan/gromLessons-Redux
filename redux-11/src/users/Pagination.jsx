@@ -7,7 +7,7 @@ const Pagination = ({ currentPage, totalItems, goPrev, goNext, itemsPerPage }) =
   const arrowForward = isNextPageAvailable ? '→' : null
   const start = currentPage * itemsPerPage
   const end = currentPage * itemsPerPage + itemsPerPage
-
+  console.log(itemsPerPage)
   return (
     <div className="pagination">
       <button className="btn"
