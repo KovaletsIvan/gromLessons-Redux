@@ -10,7 +10,7 @@ class UsersList extends React.Component {
     this.itemsPerPage = 3
     this.state = {
       newUsersList: this.props.users.usersList,
-      currentPage: this.props.users.currentPage
+      currentPage: this.props.users.currentPage+1
     }
   }
 
