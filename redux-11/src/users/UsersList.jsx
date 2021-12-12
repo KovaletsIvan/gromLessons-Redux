@@ -16,7 +16,7 @@ class UsersList extends React.Component {
 
   componentDidMount() {
     this.setState({
-      newUsersList: this.props.users.usersList.slice(this.props.currentPage, this.itemsPerPage)
+      newUsersList: this.props.users.usersList.slice(this.props.users.currentPage, this.itemsPerPage)
     })
   }
 
