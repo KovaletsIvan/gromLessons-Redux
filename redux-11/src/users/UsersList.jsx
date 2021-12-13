@@ -13,10 +13,9 @@ class UsersList extends React.Component {
       currentPage: 0,
     }
   }
-  componentDidMount() {
-    this.goNext()
-  }
-
+componentDidMount(){
+  this.goNext()
+}
 
   goPrev = () => {
     // const start = this.props.users.usersList.indexOf(this.state.newUsersList[0]) - this.itemsPerPage;
