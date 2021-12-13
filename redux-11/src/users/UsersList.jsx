@@ -26,7 +26,9 @@ class UsersList extends React.Component {
 
 
   }
-  goNext = (start, end) => {
+  goNext = () => {
+    const start = this.state.currentPage * this.itemsPerPage
+    const end = start + this.itemsPerPage
     const newArr = this.props.users.usersList.slice(start, end)
     this.setState({
       newUsersList: newArr,
@@ -35,7 +37,7 @@ class UsersList extends React.Component {
   }
 
   render() {
-    console.log(this.state)
+
     return (
       <div>
         <Pagination

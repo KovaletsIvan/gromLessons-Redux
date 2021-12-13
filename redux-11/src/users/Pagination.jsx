@@ -1,25 +1,22 @@
 import React from "react";
 
 const Pagination = ({ currentPage, totalItems, goPrev, goNext, itemsPerPage }) => {
-  const isPrevPageAvailable = currentPage > 1 
+  const isPrevPageAvailable = currentPage > 1
   const isNextPageAvailable = currentPage < totalItems / itemsPerPage
-  const arrowBackward = isPrevPageAvailable ? '←' : null
-  const arrowForward = isNextPageAvailable ? '→' : null
-  const start = currentPage * itemsPerPage
-  const end = start + itemsPerPage
+
 
   return (
     <div className="pagination">
       <button className="btn"
         onClick={goPrev}
         disabled={!isPrevPageAvailable}>
-        {arrowBackward}
+        {isPrevPageAvailable ? '←' : null}
       </button>
       <span className="pagination__page">{currentPage}</span>
       <button className="btn"
-        onClick={() => goNext(start, end)}
+        onClick={() => goNext()}
         disabled={!isNextPageAvailable}>
-        {arrowForward}
+        {isNextPageAvailable ? '→' : null}
       </button>
     </div>
   )
