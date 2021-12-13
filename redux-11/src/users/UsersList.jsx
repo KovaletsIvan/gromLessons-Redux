@@ -9,13 +9,11 @@ class UsersList extends React.Component {
     super(props)
     this.itemsPerPage = 3
     this.state = {
-      newUsersList: [],
-      currentPage: 0,
+      newUsersList: this.props.users.usersList.slice(0, this.itemsPerPage),
+      currentPage: 1,
     }
   }
-  componentDidMount() {
-    this.goNext()
-  }
+
 
   goPrev = () => {
     const start = (this.state.currentPage - 2) * this.itemsPerPage
@@ -38,7 +36,7 @@ class UsersList extends React.Component {
   }
 
   render() {
- 
+
     return (
       <div>
         <Pagination
