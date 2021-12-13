@@ -1,12 +1,12 @@
 import React from "react";
 
 const Pagination = ({ currentPage, totalItems, goPrev, goNext, itemsPerPage }) => {
-  const isPrevPageAvailable = currentPage > 1 ? true : false
-  const isNextPageAvailable = currentPage < totalItems / itemsPerPage ? true : false
+  const isPrevPageAvailable = currentPage > 1 
+  const isNextPageAvailable = currentPage < totalItems / itemsPerPage
   const arrowBackward = isPrevPageAvailable ? '←' : null
   const arrowForward = isNextPageAvailable ? '→' : null
   const start = currentPage * itemsPerPage
-  const end = currentPage * itemsPerPage + itemsPerPage
+  const end = start + itemsPerPage
 
   return (
     <div className="pagination">
