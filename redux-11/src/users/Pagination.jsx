@@ -4,7 +4,6 @@ const Pagination = ({ currentPage, totalItems, goPrev, goNext, itemsPerPage }) =
   const isPrevPageAvailable = currentPage > 1
   const isNextPageAvailable = currentPage < Math.ceil(totalItems / itemsPerPage)
 
-console.log(currentPage)
   return (
     <div className="pagination">
       <button className="btn"
