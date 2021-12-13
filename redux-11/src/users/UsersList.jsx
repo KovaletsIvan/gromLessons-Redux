@@ -9,15 +9,18 @@ class UsersList extends React.Component {
     super(props)
     this.itemsPerPage = 3
     this.state = {
-      newUsersList: this.props.users.usersList.slice(this.props.users.currentPage, this.itemsPerPage),
-      currentPage: 1
+      newUsersList: [],
+      currentPage: 0,
     }
+  }
+  componentDidMount() {
+    this.goNext()
   }
 
 
-
   goPrev = () => {
-    const start = this.props.users.usersList.indexOf(this.state.newUsersList[0]) - this.itemsPerPage;
+    // const start = this.props.users.usersList.indexOf(this.state.newUsersList[0]) - this.itemsPerPage;
+    const start = (this.state.currentPage - 2) * this.itemsPerPage
     const newArr = this.props.users.usersList.slice(start, start + this.itemsPerPage)
     this.setState({
       newUsersList: newArr,
@@ -42,7 +45,7 @@ class UsersList extends React.Component {
       <div>
         <Pagination
           currentPage={this.state.currentPage}
-          totalItems={this.props.users.usersList.length}
+          totalItems={this.props.users.usersList.length + 1}
           itemsPerPage={this.itemsPerPage}
           goPrev={this.goPrev}
           goNext={this.goNext}
