@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import User from "./User";
 import Pagination from "./Pagination";
+import * as usersActions from '../users.actions'
 
 
 class UsersList extends React.Component {
@@ -10,29 +11,28 @@ class UsersList extends React.Component {
     this.itemsPerPage = 3
     this.state = {
       newUsersList: this.props.users.usersList.slice(0, this.itemsPerPage),
-      currentPage: 1,
     }
+    
   }
 
 
   goPrev = () => {
-    const start = (this.state.currentPage - 2) * this.itemsPerPage
+    const start = (this.props.users.currentPage - 2) * this.itemsPerPage
     const newArr = this.props.users.usersList.slice(start, start + this.itemsPerPage)
     this.setState({
       newUsersList: newArr,
-      currentPage: this.state.currentPage - 1
     })
-
+    this.props.decrement()
 
   }
   goNext = () => {
-    const start = this.state.currentPage * this.itemsPerPage
+    const start = this.props.users.currentPage * this.itemsPerPage
     const end = start + this.itemsPerPage
     const newArr = this.props.users.usersList.slice(start, end)
     this.setState({
       newUsersList: newArr,
-      currentPage: this.state.currentPage + 1
     })
+    this.props.increment()
   }
 
   render() {
@@ -40,7 +40,7 @@ class UsersList extends React.Component {
     return (
       <div>
         <Pagination
-          currentPage={this.state.currentPage}
+          currentPage={this.props.users.currentPage}
           totalItems={this.props.users.usersList.length + 1}
           itemsPerPage={this.itemsPerPage}
           goPrev={this.goPrev}
@@ -61,7 +61,11 @@ const mapState = state => {
   }
 }
 
+const mapDispatch = {
+  increment: usersActions.increment,
+  decrement: usersActions.decrement
+}
 
-const connector = connect(mapState)
+const connector = connect(mapState,mapDispatch)
 
 export default connector(UsersList)
