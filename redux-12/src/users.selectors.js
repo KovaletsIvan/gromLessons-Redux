@@ -1,7 +1,7 @@
 export const usersListSelector = (state) => {
-  return state.users.userrsList;
+  return state.users.usersList;
 };
 
-export const curentPageSelector = (state) => {
-    return state.users.curentPage;
-  };
+export const currentPageSelector = (state) => {
+  return state.users.currentPage;
+};
