@@ -4,31 +4,24 @@ import User from "./User";
 import Pagination from "./Pagination";
 import * as usersActions from "../users.actions";
 
-const UsersList = (props) => {
-  const { usersList, currentPage} = props.users;
+const UsersList = ({ users, currentPage,increment,decrement}) => {
+  
   const itemsPerPage = 3;
   const start = currentPage * itemsPerPage;
-  const end = start + itemsPerPage;
+  const usersToDislay = users.slice(start,start + itemsPerPage);
   
-  const goPrev = () => {
-   props.decrement(); 
-  };
-  
-  const goNext = () => {  
-    props.increment(); 
-  };
- 
+
   return (
     <div>
       <Pagination
         currentPage={currentPage}
-        totalItems={usersList.length}
+        totalItems={users.length}
         itemsPerPage={itemsPerPage}
-        goPrev={goPrev}
-        goNext={goNext}
+        goPrev={decrement}
+        goNext={increment}
       />
       <ul className="users">
-        {usersList.slice(start,end).map((user) => (
+        {usersToDislay.map((user) => (
           <User key={user.id} name={user.name} age={user.age} />
         ))}
       </ul>
@@ -38,7 +31,8 @@ const UsersList = (props) => {
 
 const mapState = (state) => {
   return {
-    users: state,
+    users: state.users.usersList,
+    currentPage:state.users.currentPage
   };
 };
 

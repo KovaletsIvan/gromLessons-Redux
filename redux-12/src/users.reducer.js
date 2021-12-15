@@ -1,12 +1,13 @@
 import { INCREASE, DECREASE } from "./users.actions";
 
-export const userReducer = (state = initState, action) => {
-  switch (action.type) {
+export const userReducer = (state = initState, actions) => {
+  switch (actions.type) {
     case INCREASE:
       return {
         ...state,
         users: { ...state.users, currentPage: state.users.currentPage + 1 },
       };
+
     case DECREASE:
       return {
         ...state,
