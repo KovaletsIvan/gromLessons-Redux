@@ -3,11 +3,11 @@ import {connect} from "react-redux"
 import {usersListToshow,getFilterText} from "./users.selectors"
 import {choiceUsers} from "./users.actions"
 
-const Filter = ({ filterText, usersList, choiceUsers }) => {
+const Filter = ({ filterText, count, choiceUsers }) => {
   
   return (
     <div className="filter">
-      <span className="filter__count">{usersList.length}</span>
+      <span className="filter__count">{count}</span>
       <input
         type="text"
         className="filter__input"
@@ -19,7 +19,7 @@ const Filter = ({ filterText, usersList, choiceUsers }) => {
 };
 const mapState =(state)=>{
   return{
-    usersList: usersListToshow(state),
+    count: usersListToshow(state).length,
     filterText: getFilterText(state),
   }
 }
