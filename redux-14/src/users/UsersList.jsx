@@ -6,17 +6,16 @@ import { getFilterText, usersListToshow } from "../users.selectors";
 import { choiceUsers } from "../users.actions";
 
 const UsersList = ({ usersList, filterText, choiceUsers }) => {
-  const listToShow = usersList.filter((user) =>
-    user.name.toLowerCase().includes(filterText)
-  );
+
+
   return (
     <div>
       <Filter
         filterText={filterText}
-        count={listToShow.length}
+        count={usersList.length}
         choiceUsers={choiceUsers}
       />
-      {listToShow.map((user) => (
+      {usersList.map((user) => (
         <User key={user.id} {...user} />
       ))}
     </div>
