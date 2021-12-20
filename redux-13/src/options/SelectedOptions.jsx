@@ -9,6 +9,7 @@ const mapState = state =>{
       options:selectedOptionsSelector(state)
     }
   }
+  
   const mapDispatch = {
     moveOption:toogleOption
   }
