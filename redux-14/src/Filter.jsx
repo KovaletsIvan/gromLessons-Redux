@@ -8,9 +8,7 @@ const Filter = ({ filterText, count, changeUsers }) => {
         type="text"
         className="filter__input"
         value={filterText}
-        onChange={() =>
-          changeUsers(document.querySelector(".filter__input").value)
-        }
+        onChange={(e) => changeUsers(e.target.value)}
       />
     </div>
   );
