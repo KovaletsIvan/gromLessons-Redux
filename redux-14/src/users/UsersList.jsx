@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import User from "./User";
 import Filter from "./Filter";
-import { getFilterText, getUsersList } from "../users.selectors";
+import { getFilterText, usersListToshow } from "../users.selectors";
 import { choiceUsers } from "../users.actions";
 
 const UsersList = ({ usersList, filterText, choiceUsers }) => {
@@ -25,7 +25,7 @@ const UsersList = ({ usersList, filterText, choiceUsers }) => {
 
 const mapState = (state) => {
   return {
-    usersList: getUsersList(state),
+    usersList: usersListToshow(state),
     filterText: getFilterText(state),
   };
 };
