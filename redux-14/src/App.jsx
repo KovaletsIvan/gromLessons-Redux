@@ -7,10 +7,7 @@ import Filter from './Filter';
 const App = () => {
   return (
     <Provider store={store}>
-      <div>
-      <Filter/>
       <UsersList/>
-      </div>
     </Provider>
   );
 };
