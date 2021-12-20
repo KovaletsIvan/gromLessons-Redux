@@ -30,8 +30,8 @@ const mapState = (state) => {
   };
 };
 
-const mapActions = {
+const mapDispatch = {
   choiceUsers: choiceUsers,
 };
 
-export default connect(mapState, mapActions)(UsersList);
+export default connect(mapState, mapDispatch)(UsersList);
