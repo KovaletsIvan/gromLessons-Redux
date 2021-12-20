@@ -8,9 +8,7 @@ const Filter = ({ filterText, count, choiceUsers }) => {
         type="text"
         className="filter__input"
         value={filterText}
-        onChange={() =>
-          choiceUsers(document.querySelector(".filter__input").value)
-        }
+        onChange={choiceUsers}
       />
     </div>
   );
