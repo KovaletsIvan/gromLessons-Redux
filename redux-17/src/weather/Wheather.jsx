@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { getWeatherData } from "./wheather.actions";
 import { wheatherDataSelector } from "./wheater.selectors";
 
-const Wheather = ({ whetherData, getWeatherData }) => {
+const Weather = ({ whetherData, getWeatherData }) => {
   if (whetherData.length == 0) {
     getWeatherData();
   }
@@ -31,4 +31,4 @@ const mapState = (state) => {
 const mapDispatch = {
   getWeatherData: getWeatherData,
 };
-export default connect(mapState, mapDispatch)(Wheather);
+export default connect(mapState, mapDispatch)(Weather);
