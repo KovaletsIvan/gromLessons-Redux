@@ -1,10 +1,11 @@
 import React from "react";
 import { connect } from "react-redux";
-import { getWeathetData } from "./wheather.actions";
+import { getWeatherData } from "./wheather.actions";
+import { wheatherDataSelector } from "./wheater.selectors";
 
-const Wheather = ({ whetherData, getWeathetData }) => {
+const Wheather = ({ whetherData, getWeatherData }) => {
   if (whetherData.length == 0) {
-    getWeathetData();
+    getWeatherData();
   }
 
   return (
@@ -24,10 +25,10 @@ const Wheather = ({ whetherData, getWeathetData }) => {
 
 const mapState = (state) => {
   return {
-    whetherData: state.wheather.citiesList,
+    whetherData: wheatherDataSelector(state),
   };
 };
 const mapDispatch = {
-  getWeathetData: getWeathetData,
+  getWeatherData: getWeatherData,
 };
 export default connect(mapState, mapDispatch)(Wheather);
