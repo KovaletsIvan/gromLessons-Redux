@@ -1,5 +1,5 @@
 import { createStore, combineReducers, applyMiddleware, compose } from "redux";
-import { wheatherReducer } from "../src/weather/wheather.reducer";
+import { wheatherReducer } from "./weather/weather.reducer";
 import thunk from "redux-thunk";
 
 const appReducers = combineReducers({

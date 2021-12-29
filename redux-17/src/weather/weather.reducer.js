@@ -1,4 +1,4 @@
-import { WEATHER } from "./wheather.actions";
+import { WEATHER } from "./weather.actions";
 
 const initialState = { citiesList: [] };
 

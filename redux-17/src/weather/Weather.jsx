@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
-import { getWeatherData } from "./wheather.actions";
-import { wheatherDataSelector } from "./wheater.selectors";
+import { getWeatherData } from "./weather.actions";
+import { wheatherDataSelector } from "./weater.selectors";
 
 const Weather = ({ whetherData, getWeatherData }) => {
   if (whetherData.length == 0) {

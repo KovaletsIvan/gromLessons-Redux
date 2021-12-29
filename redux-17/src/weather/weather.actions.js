@@ -1,4 +1,4 @@
-import { fetchWheatherData } from "./wheather.gateway";
+import { fetchWheatherData } from "./weather.gateway";
 
 export const WEATHER = "WHEATHER";
 
